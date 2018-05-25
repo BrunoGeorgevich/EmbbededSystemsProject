@@ -10,6 +10,16 @@
 
 #include "uart_driver.h"
 
+
+static void hello_world() {
+    struct mb_display *disp = mb_display_get();
+
+    char *str = "Hello World";
+
+    mb_display_print(disp, MB_DISPLAY_MODE_SINGLE, K_SECONDS(1), str);
+    k_sleep(K_SECONDS(1)*strlen(str));
+}
+
 static void button_pressed(struct device *dev, struct gpio_callback *cb,
                            u32_t pins)
 {
