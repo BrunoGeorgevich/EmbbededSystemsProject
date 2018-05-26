@@ -11,8 +11,7 @@ include_directories(
 
 list(APPEND SOURCES
     "${PROJECT_SOURCE_DIR}/src/uart_driver.c"
-#    "${PROJECT_SOURCE_DIR}/src/ICLEDMatrix.c"
-#    "${PROJECT_SOURCE_DIR}/src/CommandAT.c"
+    "${PROJECT_SOURCE_DIR}/src/i2c_utils.c"
     "${PROJECT_SOURCE_DIR}/src/main.c"
     )
 
