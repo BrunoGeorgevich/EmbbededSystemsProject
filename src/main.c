@@ -20,8 +20,8 @@ struct i2c_dev accelerometer, compass;
 #define COMPASS_REGISTER        0x07
 #define COMPASS_TEST            0xC4
 
-#define REFRESH_TIME 16
-//#define DEBUG
+#define REFRESH_TIME 100
+#define DEBUG
 
 typedef enum {
     HELLOWORLD,     // Estado 1
@@ -64,9 +64,6 @@ static void accelerometer_display(int x, int y) {
     { 0, 0, 0, 0, 0 },
     { 0, 0, 0, 0, 0 });
 
-#ifdef DEBUG
-    printk("[%d][%d] -> %d\n", translate_pos_accelerometer(y), translate_pos_accelerometer(x), 1 << translate_pos_accelerometer(x));
-#endif
     __dot.row[translate_pos_accelerometer(y)] = (1 << translate_pos_accelerometer(x));
 
     struct mb_display *disp = mb_display_get();
@@ -75,19 +72,27 @@ static void accelerometer_display(int x, int y) {
     k_sleep(K_MSEC(REFRESH_TIME));
 }
 
-static void acceletometer_showcase() {
-    u8_t data_msb[1];
-    u8_t data_lsb[1];
+static void compass_display() {
 
-    u16_t x,y;
+    struct mb_display *disp = mb_display_get();
+
+    char *str = "T";
+
+    mb_display_print(disp, MB_DISPLAY_MODE_SINGLE, K_SECONDS(1), str);
+    k_sleep(K_SECONDS(1)*strlen(str));
+}
+
+static void acceletometer_showcase() {
+    uint8_t data_msb[1];
+    uint8_t data_lsb[1];
+
+    uint16_t x,y,z;
     //X_LSB = 0x2 | Y_LSB = 0x4 | Z_LSB = 0x6
     i2c_util_read_bytes(&accelerometer, 0x1, data_msb, sizeof(data_msb));
     i2c_util_read_bytes(&accelerometer, 0x2, data_lsb, sizeof(data_lsb));
 
     data_lsb[0] = (data_msb[0] << 2) | (data_lsb[0] >> 6);
-    data_msb[0] = 0; //data_msb[0] >> 6;
-
-    x = (data_msb[0] << 8) | data_lsb[0];
+    x = data_lsb[0];
 
 #ifdef DEBUG
     printk("ACC X: %d\n", x);
@@ -97,15 +102,61 @@ static void acceletometer_showcase() {
     i2c_util_read_bytes(&accelerometer, 0x4, data_lsb, sizeof(data_lsb));
 
     data_lsb[0] = (data_msb[0] << 2) | (data_lsb[0] >> 6);
-    data_msb[0] = 0; //data_msb[0] >> 6;
-
-    y = (data_msb[0] << 8) | data_lsb[0];
+    y = data_lsb[0];
 
 #ifdef DEBUG
     printk("ACC Y: %d\n", y);
 #endif
 
+    i2c_util_read_bytes(&accelerometer, 0x5, data_msb, sizeof(data_msb));
+    i2c_util_read_bytes(&accelerometer, 0x6, data_lsb, sizeof(data_lsb));
+
+    data_lsb[0] = (data_msb[0] << 2) | (data_lsb[0] >> 6);
+    z = data_lsb[0];
+
+#ifdef DEBUG
+    printk("ACC Z: %d\n", z);
+    printk("------------------------------------\n", z);
+#endif
+
     accelerometer_display(x,y);
+}
+
+static void compass_showcase() {
+    int8_t data_msb[1];
+    int8_t data_lsb[1];
+
+    int16_t x,y,z;
+    //X_LSB = 0x2 | Y_LSB = 0x4 | Z_LSB = 0x6
+    i2c_util_read_bytes(&compass, 0x1, data_msb, sizeof(data_msb));
+    i2c_util_read_bytes(&compass, 0x2, data_lsb, sizeof(data_lsb));
+
+    x = data_msb[0] << 8 | data_lsb[0];
+
+#ifdef DEBUG
+    printk("COMPASS X: %d\n", x);
+#endif
+
+    i2c_util_read_bytes(&compass, 0x3, data_msb, sizeof(data_msb));
+    i2c_util_read_bytes(&compass, 0x4, data_lsb, sizeof(data_lsb));
+
+    y = data_msb[0] << 8 | data_lsb[0];
+
+#ifdef DEBUG
+    printk("COMPASS Y: %d\n", y);
+#endif
+
+    i2c_util_read_bytes(&compass, 0x5, data_msb, sizeof(data_msb));
+    i2c_util_read_bytes(&compass, 0x6, data_lsb, sizeof(data_lsb));
+
+    z = data_msb[0] << 8 | data_lsb[0];
+
+#ifdef DEBUG
+    printk("COMPASS Z: %d\n", z);
+    printk("------------------------------------\n", z);
+#endif
+
+    compass_display();
 }
 
 static void hello_world() {
@@ -158,13 +209,16 @@ int main() {
 
     i2c_util_dev_init(&accelerometer, ACCELEROMETER_ADDRESS, "ACC", ACCELEROMETER_REGISTER,
                       ACCELEROMETER_TEST);
+    i2c_util_dev_init(&compass, COMPASS_ADDRESS, "COMPASS", COMPASS_REGISTER, COMPASS_TEST);
 
-    u8_t temp = 1;
-    i2c_util_write_bytes(&accelerometer, 0x2A, &temp, sizeof(u8_t));
+    u8_t bit_activator = 1;
+    i2c_util_write_bytes(&accelerometer, 0x2A, &bit_activator, sizeof(u8_t));
+    i2c_util_write_bytes(&compass, 0x10, &bit_activator, sizeof(u8_t));
 
     while (1) {
-//        hello_world();
-        acceletometer_showcase();
+        //        hello_world();
+        //        acceletometer_showcase();
+                compass_showcase();
 
         k_sleep(REFRESH_TIME);
     }
