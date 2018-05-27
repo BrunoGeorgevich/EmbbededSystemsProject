@@ -31,17 +31,30 @@
 #define REFRESH_TIME 16
 #define DEBUG
 
-typedef enum {
+enum state_t{
     HELLOWORLD,     // Estado 1
     TEMPERATURE,    // Estado 2
     ACCELETOMETER,  // Estado 3
     MAGNETOMETER,   // Estado 4
     BLUETOOTH       // Estado 5
-} state_t;
+};
 
+struct state {
+    union {
+        struct states
+        {
+            enum state_t previous;
+            enum state_t current;
+            enum state_t next;
+        };
+        enum state_t s[3];
+    };
 
-struct i2c_dev accelerometer, compass;
-struct device *temperature_sensor;
+    void (*run)(void);
+};
+
+static struct i2c_dev accelerometer, compass;
+static struct device *temperature_sensor;
 static const struct bt_data ad[] = {
     BT_DATA_BYTES(BT_DATA_FLAGS, BT_LE_AD_NO_BREDR),
     BT_DATA_BYTES(BT_DATA_UUID16_ALL, 0xaa, 0xfe),
@@ -54,8 +67,6 @@ static const struct bt_data ad[] = {
                   'p', 'r', 'o', 'j', 'e', 'c', 't',
                   0x08) /* .org */
 };
-
-/* Set Scan Response data */
 static const struct bt_data sd[] = {
     BT_DATA(BT_DATA_NAME_COMPLETE, DEVICE_NAME, DEVICE_NAME_LEN),
 };
@@ -176,7 +187,7 @@ static void temperature_showcase() {
     k_sleep(1800);
 }
 
-static void acceletometer_showcase() {
+static void accelerometer_showcase() {
     uint8_t data_msb[1];
     uint8_t data_lsb[1];
 
@@ -263,6 +274,19 @@ static void hello_world() {
     k_sleep(K_SECONDS(1)*strlen(str));
 }
 
+
+static struct state states[5] = {
+{BLUETOOTH, HELLOWORLD, TEMPERATURE,        hello_world},
+{HELLOWORLD, TEMPERATURE, ACCELETOMETER,    temperature_showcase},
+{TEMPERATURE, ACCELETOMETER, MAGNETOMETER,  accelerometer_showcase},
+{ACCELETOMETER, MAGNETOMETER, BLUETOOTH,    compass_showcase},
+{MAGNETOMETER, BLUETOOTH, HELLOWORLD,       bluetooth_showcase},
+};
+
+static enum state_t current_state_t;
+static struct state *current_state;
+
+
 static void button_pressed(struct device *dev, struct gpio_callback *cb,
                            u32_t pins)
 {
@@ -270,12 +294,23 @@ static void button_pressed(struct device *dev, struct gpio_callback *cb,
 #ifdef DEBUG
         printk("A pressed\n");
 #endif
-        hello_world();
+        if(current_state_t == BLUETOOTH) {
+            current_state_t = HELLOWORLD;
+        } else {
+            current_state_t += 1;
+        }
     } else {
 #ifdef DEBUG
         printk("B pressed\n");
 #endif
+        if(current_state_t == HELLOWORLD) {
+            current_state_t = BLUETOOTH;
+        } else {
+            current_state_t -= 1;
+        }
     }
+
+    current_state = &states[current_state_t];
 }
 
 static void configure_buttons(void)
@@ -299,7 +334,12 @@ static void configure_buttons(void)
     gpio_pin_enable_callback(gpio, SW1_GPIO_PIN);
 }
 
+
 int main() {
+
+    current_state_t = HELLOWORLD;
+    current_state = &states[current_state_t];
+
     configure_buttons();
 
     i2c_util_dev_init(&accelerometer, ACCELEROMETER_ADDRESS, "ACC", ACCELEROMETER_REGISTER,
@@ -320,11 +360,7 @@ int main() {
     }
 
     while (1) {
-        //                hello_world();
-        //                acceletometer_showcase();
-        //                compass_showcase();
-        //                temperature_showcase();
-        //                bluetooth_showcase();
+        current_state->run();
     }
 
     return 0;
