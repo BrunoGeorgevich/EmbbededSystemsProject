@@ -3,6 +3,7 @@
 #include <board.h>
 #include <gpio.h>
 #include <device.h>
+#include <sensor.h>
 #include <string.h>
 #include <pwm.h>
 
@@ -11,6 +12,7 @@
 #include "i2c_utils.h"
 
 struct i2c_dev accelerometer, compass;
+struct device *temperature_sensor;
 
 #define ACCELEROMETER_ADDRESS   0x1D
 #define ACCELEROMETER_REGISTER  0x0D
@@ -20,7 +22,7 @@ struct i2c_dev accelerometer, compass;
 #define COMPASS_REGISTER        0x07
 #define COMPASS_TEST            0xC4
 
-#define REFRESH_TIME 100
+#define REFRESH_TIME 16
 #define DEBUG
 
 typedef enum {
@@ -82,6 +84,38 @@ static void compass_display() {
     k_sleep(K_SECONDS(1)*strlen(str));
 }
 
+static void temperature_showcase() {
+
+    printk("temp device is %p, name is %s\n",
+           temperature_sensor, temperature_sensor->config->name);
+    struct mb_display *disp = mb_display_get();
+
+    int r;
+    struct sensor_value temp_value;
+
+    r = sensor_sample_fetch(temperature_sensor);
+    if (r) {
+        printk("sensor_sample_fetch failed return: %d\n", r);
+        return;
+    }
+
+    r = sensor_channel_get(temperature_sensor, SENSOR_CHAN_TEMP,
+                           &temp_value);
+    if (r) {
+        printk("sensor_channel_get failed return: %d\n", r);
+        return;
+    }
+
+
+    u32_t temperature_value = (u32_t)sensor_value_to_double(&temp_value);
+
+    mb_display_print(disp, MB_DISPLAY_MODE_DEFAULT | MB_DISPLAY_FLAG_LOOP,
+                     K_MSEC(500), "%dC\n", temperature_value);
+    printk("Temperature is %d °C\n", temperature_value);
+
+    k_sleep(1800);
+}
+
 static void acceletometer_showcase() {
     uint8_t data_msb[1];
     uint8_t data_lsb[1];
@@ -120,6 +154,7 @@ static void acceletometer_showcase() {
 #endif
 
     accelerometer_display(x,y);
+    k_sleep(REFRESH_TIME);
 }
 
 static void compass_showcase() {
@@ -162,7 +197,7 @@ static void compass_showcase() {
 static void hello_world() {
     struct mb_display *disp = mb_display_get();
 
-    char *str = "Hello World";
+    char *str = "ECOM042.2017.2";
 
     mb_display_print(disp, MB_DISPLAY_MODE_SINGLE, K_SECONDS(1), str);
     k_sleep(K_SECONDS(1)*strlen(str));
@@ -215,12 +250,20 @@ int main() {
     i2c_util_write_bytes(&accelerometer, 0x2A, &bit_activator, sizeof(u8_t));
     i2c_util_write_bytes(&compass, 0x10, &bit_activator, sizeof(u8_t));
 
-    while (1) {
-        //        hello_world();
-        //        acceletometer_showcase();
-                compass_showcase();
 
-        k_sleep(REFRESH_TIME);
+    printk("Thermometer Example! %s\n", CONFIG_ARCH);
+
+    temperature_sensor = device_get_binding("TEMP_0");
+    if (!temperature_sensor) {
+        printf("error: no temp device\n");
+        return;
+    }
+
+    while (1) {
+//                hello_world();
+//                acceletometer_showcase();
+//                compass_showcase();
+                temperature_showcase();
     }
 
     return 0;
