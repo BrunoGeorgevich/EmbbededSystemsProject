@@ -1,4 +1,4 @@
-#include "i2c_utils.h".h"
+#include "i2c_utils.h"
 
 int i2c_util_dev_init(struct i2c_dev *i2c_dev, u16_t addr, const char *name,
                         u8_t reg_test, u8_t reg_test_expected_val)

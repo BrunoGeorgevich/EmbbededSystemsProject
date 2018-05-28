@@ -1,3 +1,14 @@
+/****************************************************************************
+ * Copyright (C) 2018 by Bruno Georgevich Ferreira                          *
+ * Github : https://github.com/brunogeorgevich/                             *
+ ***************************************************************************/
+
+/**
+ * @file includes.h
+ * @author Bruno Georgevich Ferreira
+ * @date 27 May 2018
+ * @brief Este arquivo contém todas as bibliotecas necessárias para os arquivos .h
+ */
 #ifndef INCLUDES_H
 #define INCLUDES_H
 

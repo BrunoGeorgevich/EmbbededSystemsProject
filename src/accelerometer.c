@@ -1,6 +1,6 @@
 #include "accelerometer.h"
 
-int translate_pos_accelerometer(int val) {
+int translate_pos_accelerometer(int32_t val) {
     if(val >= 0 && val <= 51) {
         return 4;
     }
@@ -24,7 +24,7 @@ int translate_pos_accelerometer(int val) {
     }
 }
 
-void accelerometer_display(int x, int y) {
+void accelerometer_display(int32_t x, int32_t y) {
 
     struct mb_image __dot = MB_IMAGE(
     { 0, 0, 0, 0, 0 },

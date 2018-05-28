@@ -1,7 +1,7 @@
 #include "configure.h"
 
 struct state state_machine[4] = {
-{MAGNETOMETER  , HELLOWORLD    , TEMPERATURE   ,    hello_world},
+{MAGNETOMETER  , HELLOWORLD    , TEMPERATURE   ,    helloworld_showcase},
 {HELLOWORLD    , TEMPERATURE   , ACCELETOMETER ,    temperature_showcase},
 {TEMPERATURE   , ACCELETOMETER , MAGNETOMETER  ,    accelerometer_showcase},
 {ACCELETOMETER , MAGNETOMETER  , HELLOWORLD    ,    compass_showcase},

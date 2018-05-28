@@ -1,6 +1,6 @@
 #include "helloworld.h"
 
-void hello_world() {
+void helloworld_showcase() {
     struct mb_display *disp = mb_display_get();
 
     char *str = "ECOM042.2017.2";

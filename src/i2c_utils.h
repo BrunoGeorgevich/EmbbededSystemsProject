@@ -1,3 +1,13 @@
+/****************************************************************************
+ * Copyright (C) 2018 by Bruno Georgevich Ferreira                          *
+ * Github : https://github.com/brunogeorgevich/                             *
+ ***************************************************************************/
+
+/**
+ * @file i2c_utils.h
+ * @author Zephyr
+ * @brief Este arquivo contém as constantes, funções e variáveis relacionadas a Comunicação I²C
+ */
 #ifndef __I2C_UTIL_H
 #define __I2C_UTIL_H
 
