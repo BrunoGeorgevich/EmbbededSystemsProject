@@ -1,0 +1,56 @@
+\hypertarget{structstate}{}\section{Referência da Estrutura state}
+\label{structstate}\index{state@{state}}
+
+
+Struct que modela o formato de um estado da Máquina de Estados.  
+
+
+
+
+{\ttfamily \#include $<$state.\+h$>$}
+
+\subsection*{Campos de Dados}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct {\bfseries internal\_states} \{\\
+\>\>enum \hyperlink{state_8h_aa0aafed44fec19806d8f9ad834be1248}{state\_t} \hyperlink{structstate_a276d20af15eb7cc14800557d670eb8a5}{previous}\\
+\>\>enum \hyperlink{state_8h_aa0aafed44fec19806d8f9ad834be1248}{state\_t} \hyperlink{structstate_aa23ac3f3183e79172bab91684e0195e1}{current}\\
+\>\>enum \hyperlink{state_8h_aa0aafed44fec19806d8f9ad834be1248}{state\_t} \hyperlink{structstate_a24e4d9ff5dc7891e048ee578ba970837}{next}\\
+\>\} \hypertarget{unionstate_1_1_0D0_a3c849dbd83637b100181b78ad752620c}{}\label{unionstate_1_1_0D0_a3c849dbd83637b100181b78ad752620c}
+\\
+\>enum \hyperlink{state_8h_aa0aafed44fec19806d8f9ad834be1248}{state\_t} \hyperlink{structstate_a8a9de0cd847e8ae900e15eb66fe408f2}{s} \mbox{[}3\mbox{]}\\
+\}; \hypertarget{structstate_a836fa023107dfb286044c007f23358b7}{}\label{structstate_a836fa023107dfb286044c007f23358b7}
+\\
+
+\end{tabbing}\item 
+void($\ast$ \hyperlink{structstate_a90aac7b165377e812886e60e28d054bf}{run} )(void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Struct que modela o formato de um estado da Máquina de Estados. 
+
+\subsection{Campos}
+\index{state@{state}!current@{current}}
+\index{current@{current}!state@{state}}
+\subsubsection[{\texorpdfstring{current}{current}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf state\+\_\+t} state\+::current}\hypertarget{structstate_aa23ac3f3183e79172bab91684e0195e1}{}\label{structstate_aa23ac3f3183e79172bab91684e0195e1}
+Referencia o estado atual \index{state@{state}!next@{next}}
+\index{next@{next}!state@{state}}
+\subsubsection[{\texorpdfstring{next}{next}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf state\+\_\+t} state\+::next}\hypertarget{structstate_a24e4d9ff5dc7891e048ee578ba970837}{}\label{structstate_a24e4d9ff5dc7891e048ee578ba970837}
+Referencia o estado posterior \index{state@{state}!previous@{previous}}
+\index{previous@{previous}!state@{state}}
+\subsubsection[{\texorpdfstring{previous}{previous}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf state\+\_\+t} state\+::previous}\hypertarget{structstate_a276d20af15eb7cc14800557d670eb8a5}{}\label{structstate_a276d20af15eb7cc14800557d670eb8a5}
+$<$ Referencia os estado anterior, atual e posterior Referencia o estado anterior \index{state@{state}!run@{run}}
+\index{run@{run}!state@{state}}
+\subsubsection[{\texorpdfstring{run}{run}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ state\+::run) (void)}\hypertarget{structstate_a90aac7b165377e812886e60e28d054bf}{}\label{structstate_a90aac7b165377e812886e60e28d054bf}
+Referencia o método a ser executado pelo estado atual \index{state@{state}!s@{s}}
+\index{s@{s}!state@{state}}
+\subsubsection[{\texorpdfstring{s}{s}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf state\+\_\+t} state\+::s\mbox{[}3\mbox{]}}\hypertarget{structstate_a8a9de0cd847e8ae900e15eb66fe408f2}{}\label{structstate_a8a9de0cd847e8ae900e15eb66fe408f2}
+Permite o acesso às referencias dos estados por um Array 
+
+A documentação para esta estrutura foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{state_8h}{state.\+h}\end{DoxyCompactItemize}

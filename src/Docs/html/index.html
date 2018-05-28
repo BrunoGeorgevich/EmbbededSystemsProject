@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Projeto Final de Embarcados: Página Principal</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projeto Final de Embarcados
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Este projeto foi realizado para a Disciplina de Sistemas Embarcados, ministrada pelo professor Rodrigo Peixoto.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li class="current"><a href="index.html"><span>Página&#160;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Estruturas&#160;de&#160;Dados</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Página Principal </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
+Descrição</h1>
+<p>Este projeto foi delegado aos estudantes da turma de Sistemas Embarcados, no período de 2017.2, pelo professor da Universidade Federal de Alagoas (UFal) Rodrigo Peixoto. O estudo realizado aqui tem como principal proposta exercitar os conhecimentos aprendidos em sala de aula, referentes aos conceitos e técnicas no que tange o desenvolvimento de e para sistemas embarcados. Desta forma, foi proposto o desenvolvimento de cinco casos de teste, que contemplassem os conceitos aprendidos, anteriormente mencionados, e as funcionalidades presentes na placa utilizada, a MicroBit. Os cinco casos de teste consistiam em:</p><ul>
+<li>Caso 01: Mostrar o texto "ECOM042.2017.2" no display de forma que ele fique passando no display.</li>
+<li>Caso 02: Deve utilizar o acelerômetro para movimentar um ponto (apenas um led da matriz) que dependendo da posição da placa ele vai se mover;</li>
+<li>Caso 03: Deve utilizar a bússola para mostrar onde está o norte magnético. Essa indicação deve ser feita na matriz de leds;</li>
+<li>Caso 04: Mostrar a temperatura capturada pelo sensor da placa em graus célsius;</li>
+<li>Caso 05: Deve utilizar o bluetooth para interagir com um aparelho externo (ex. celular ou computador) deve trocar dados nessa interação. Fica a critério do aluno definir como mostrar que a troca de dados ocorre de forma correta. Dica, pode mostrar na matriz de led o valor passado pelo outro computador.</li>
+</ul>
+<p>Onde somente quatro se fizeram possíveis de serem implementados.</p>
+<h1><a class="anchor" id="install_sec"></a>
+Execução do Projeto</h1>
+<p>Para execução do projeto desenvolvido para este projeto, deve-se baixá-lo do repositório online e instalar algumas depedências: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo apt-get install putty</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;git clone https://github.com/BrunoGeorgevich/EmbbededSystemsProject</div></div><!-- fragment --><p>Logo em seguida, deve-se entrar no diretório baixado, através do comando: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;cd EmbbededSystemsProject</div></div><!-- fragment --><p>Para que então se possa compilar e gerar o binário referente a MicroBit: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;cd build</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;cmake ..</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;make -j7</div></div><!-- fragment --><p>Caso todo o processo de compilação e geração tenha dado certo, agora basta copiar o binário gerado e copiá-lo para a MicroBit: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;cp zephyr/zephyr.bin [CAMINHO PARA A SUA MICROBIT]</div></div><!-- fragment --><p>Tendo copiado o binário para a MicroBit a mesma irá reiniciar e desconectar do computador. Logo após ela automaticamente reconectar, execute a linha de comando abaixo para comunicar-se com ela via serial: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo putty /dev/ttyACM0 -serial -sercfg 115200,8,n,1,N</div></div><!-- fragment --><p>Para gerar a documentação para o mesmo, deve-se executar as seguites linhas de código: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;cd ../src/ &amp;&amp; doxygen dox_config</div></div><!-- fragment --> </div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

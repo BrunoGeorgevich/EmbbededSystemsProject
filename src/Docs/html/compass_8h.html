@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Projeto Final de Embarcados: Referência do Arquivo compass.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projeto Final de Embarcados
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Este projeto foi realizado para a Disciplina de Sistemas Embarcados, ministrada pelo professor Rodrigo Peixoto.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Estruturas&#160;de&#160;Dados</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definições e Macros</a> &#124;
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo compass.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Este arquivo contém as funções, constantes e variáveis relacionadas a funcionalidade da Bússola.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="includes_8h_source.html">includes.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para compass.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="compass_8h__incl.png" border="0" usemap="#compass_8h" alt=""/></div>
+<map name="compass_8h" id="compass_8h">
+<area shape="rect" id="node2" href="includes_8h.html" title="Este arquivo contém todas as bibliotecas necessárias para os arquivos .h. " alt="" coords="591,80,673,107"/>
+<area shape="rect" id="node17" href="i2c__utils_8h.html" title="Este arquivo contém as constantes, funções e variáveis relacionadas a Comunicação I²C..." alt="" coords="370,155,451,181"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com este arquivo:</div>
+<div class="dyncontent">
+<div class="center"><img src="compass_8h__dep__incl.png" border="0" usemap="#compass_8hdep" alt=""/></div>
+<map name="compass_8hdep" id="compass_8hdep">
+<area shape="rect" id="node2" href="configure_8h.html" title="Este arquivo contém as funções, constantes e variáveis responsáveis por configurar e abstrair os Sens..." alt="" coords="5,80,92,107"/>
+</map>
+</div>
+</div>
+<p><a href="compass_8h_source.html">Vá para o código-fonte deste arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:a0deae345f38c0e72dd027b6c2e7c38e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compass_8h.html#a0deae345f38c0e72dd027b6c2e7c38e7">COMPASS_ADDRESS</a>&#160;&#160;&#160;0x0e</td></tr>
+<tr class="separator:a0deae345f38c0e72dd027b6c2e7c38e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6ecd848e176fd228e159d1e9bf0d445"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compass_8h.html#ad6ecd848e176fd228e159d1e9bf0d445">COMPASS_REGISTER</a>&#160;&#160;&#160;0x07</td></tr>
+<tr class="separator:ad6ecd848e176fd228e159d1e9bf0d445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c8204e4e26f069411ac8c96ea3ad129"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compass_8h.html#a7c8204e4e26f069411ac8c96ea3ad129">COMPASS_TEST</a>&#160;&#160;&#160;0xC4</td></tr>
+<tr class="separator:a7c8204e4e26f069411ac8c96ea3ad129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec4a4eac5b9b6a4f984b06fc1f89448e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compass_8h.html#aec4a4eac5b9b6a4f984b06fc1f89448e">REFRESH_TIME_COMPASS</a>&#160;&#160;&#160;1000</td></tr>
+<tr class="separator:aec4a4eac5b9b6a4f984b06fc1f89448e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a28af8cd17e7340de7115170728bf4915"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28af8cd17e7340de7115170728bf4915"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compass_8h.html#a28af8cd17e7340de7115170728bf4915">compass_display</a> ()</td></tr>
+<tr class="memdesc:a28af8cd17e7340de7115170728bf4915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que irá mostrar na Matriz 5x5 um "T". <br /></td></tr>
+<tr class="separator:a28af8cd17e7340de7115170728bf4915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9325b2f8617cef31301292bb0d30c04f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9325b2f8617cef31301292bb0d30c04f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compass_8h.html#a9325b2f8617cef31301292bb0d30c04f">compass_showcase</a> ()</td></tr>
+<tr class="memdesc:a9325b2f8617cef31301292bb0d30c04f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que irá executar a funcionalidade da Bússola Implementada. <br /></td></tr>
+<tr class="separator:a9325b2f8617cef31301292bb0d30c04f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3422b44dd53d24518dfe42a6a485add"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3422b44dd53d24518dfe42a6a485add"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compass_8h.html#af3422b44dd53d24518dfe42a6a485add">init_compass</a> ()</td></tr>
+<tr class="memdesc:af3422b44dd53d24518dfe42a6a485add"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que irá iniciar as variáveis responsáveis pelo bom funcionamento da Bússola. <br /></td></tr>
+<tr class="separator:af3422b44dd53d24518dfe42a6a485add"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a52e4a8d90dbb3179114b45e6bb717b27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52e4a8d90dbb3179114b45e6bb717b27"></a>
+struct <a class="el" href="structi2c__dev.html">i2c_dev</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compass_8h.html#a52e4a8d90dbb3179114b45e6bb717b27">compass</a></td></tr>
+<tr class="memdesc:a52e4a8d90dbb3179114b45e6bb717b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variável responsável por estabelecer a comunicação I²C com a Bússola. <br /></td></tr>
+<tr class="separator:a52e4a8d90dbb3179114b45e6bb717b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição Detalhada</h2>
+<div class="textblock"><p>Este arquivo contém as funções, constantes e variáveis relacionadas a funcionalidade da Bússola. </p>
+<dl class="section author"><dt>Autor</dt><dd>Bruno Georgevich Ferreira </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>27 May 2018 </dd></dl>
+</div><h2 class="groupheader">Definições e macros</h2>
+<a class="anchor" id="a0deae345f38c0e72dd027b6c2e7c38e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPASS_ADDRESS&#160;&#160;&#160;0x0e</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Endereço da Bússola </p>
+
+</div>
+</div>
+<a class="anchor" id="ad6ecd848e176fd228e159d1e9bf0d445"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPASS_REGISTER&#160;&#160;&#160;0x07</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Registrador da Bússola </p>
+
+</div>
+</div>
+<a class="anchor" id="a7c8204e4e26f069411ac8c96ea3ad129"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPASS_TEST&#160;&#160;&#160;0xC4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Código de Teste da Bússola </p>
+
+</div>
+</div>
+<a class="anchor" id="aec4a4eac5b9b6a4f984b06fc1f89448e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REFRESH_TIME_COMPASS&#160;&#160;&#160;1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tempo de Reiterção da Bússola </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

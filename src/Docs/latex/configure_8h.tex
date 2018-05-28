@@ -1,0 +1,86 @@
+\hypertarget{configure_8h}{}\section{Referência do Arquivo configure.\+h}
+\label{configure_8h}\index{configure.\+h@{configure.\+h}}
+
+
+Este arquivo contém as funções, constantes e variáveis responsáveis por configurar e abstrair os Sensores da Micro\+Bit.  
+
+
+{\ttfamily \#include \char`\"{}includes.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}helloworld.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}temperature.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}accelerometer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}compass.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}state.\+h\char`\"{}}\\*
+Gráfico de dependência de inclusões para configure.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{configure_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Definições e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{configure_8h_a4665ddd28964cf2d8afbcdcdb8b147e8}{P\+R\+O\+G\+R\+A\+M\+\_\+\+R\+U\+N\+S\+\_\+\+C\+O\+R\+R\+E\+C\+T\+LY}~1
+\item 
+\#define \hyperlink{configure_8h_a15218844bd3bc87e3ff485780c675998}{N\+O\+\_\+\+E\+R\+R\+O\+RS}~0
+\item 
+\#define \hyperlink{configure_8h_ad72dbcf6d0153db1b8d8a58001feed83}{D\+E\+B\+UG}
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{configure_8h_acc6cd67b731447c215f82c81fffdfa5f}{button\+\_\+pressed} (struct device $\ast$dev, struct gpio\+\_\+callback $\ast$cb, u32\+\_\+t pins)\hypertarget{configure_8h_acc6cd67b731447c215f82c81fffdfa5f}{}\label{configure_8h_acc6cd67b731447c215f82c81fffdfa5f}
+
+\begin{DoxyCompactList}\small\item\em Função que irá identificar o botão apertado e executar a ação delegada ao mesmo. \end{DoxyCompactList}\item 
+void \hyperlink{configure_8h_aa5669c257d560bbb1ae4c9eebde97efd}{configure\+\_\+buttons} (void)\hypertarget{configure_8h_aa5669c257d560bbb1ae4c9eebde97efd}{}\label{configure_8h_aa5669c257d560bbb1ae4c9eebde97efd}
+
+\begin{DoxyCompactList}\small\item\em Função responsável por configurar os botões e seus devidos pinos e callbacks. \end{DoxyCompactList}\item 
+void \hyperlink{configure_8h_ad7577ba7f06f417a019b69da8682ede5}{init\+\_\+sensors} (void)\hypertarget{configure_8h_ad7577ba7f06f417a019b69da8682ede5}{}\label{configure_8h_ad7577ba7f06f417a019b69da8682ede5}
+
+\begin{DoxyCompactList}\small\item\em Função responsável por inicializar todos os sensores utilizados no projeto. \end{DoxyCompactList}\item 
+void \hyperlink{configure_8h_aeb85c296fae392e3c75a675d66e0357a}{init\+\_\+state\+\_\+machine} (void)\hypertarget{configure_8h_aeb85c296fae392e3c75a675d66e0357a}{}\label{configure_8h_aeb85c296fae392e3c75a675d66e0357a}
+
+\begin{DoxyCompactList}\small\item\em Função responsável por inicializar a Máquina de Estados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+s64\+\_\+t \hyperlink{configure_8h_a6521179d005835fc4671d4fb5b9f31a1}{a\+\_\+timestamp}\hypertarget{configure_8h_a6521179d005835fc4671d4fb5b9f31a1}{}\label{configure_8h_a6521179d005835fc4671d4fb5b9f31a1}
+
+\begin{DoxyCompactList}\small\item\em Variável responsável por armazenar o momento que o qual o último clique foi realizado no Botão A. \end{DoxyCompactList}\item 
+s64\+\_\+t \hyperlink{configure_8h_a2244551330ffddfb615f9ef02dabf65e}{b\+\_\+timestamp}\hypertarget{configure_8h_a2244551330ffddfb615f9ef02dabf65e}{}\label{configure_8h_a2244551330ffddfb615f9ef02dabf65e}
+
+\begin{DoxyCompactList}\small\item\em Variável responsável por armazenar o momento que o qual o último clique foi realizado no Botão B. \end{DoxyCompactList}\item 
+struct \hyperlink{structstate}{state} \hyperlink{configure_8h_ada99a16d29437b18c0e931b401d452e9}{state\+\_\+machine} \mbox{[}4\mbox{]}\hypertarget{configure_8h_ada99a16d29437b18c0e931b401d452e9}{}\label{configure_8h_ada99a16d29437b18c0e931b401d452e9}
+
+\begin{DoxyCompactList}\small\item\em Variável responsável por armazenar o estados predefinidos da Máquina de Estados. \end{DoxyCompactList}\item 
+enum \hyperlink{state_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t} \hyperlink{configure_8h_a56e95103335d590a068c27e16266e1f4}{current\+\_\+state\+\_\+t}\hypertarget{configure_8h_a56e95103335d590a068c27e16266e1f4}{}\label{configure_8h_a56e95103335d590a068c27e16266e1f4}
+
+\begin{DoxyCompactList}\small\item\em Variável responsável por referenciar o tipo do estado atual. \end{DoxyCompactList}\item 
+struct \hyperlink{structstate}{state} $\ast$ \hyperlink{configure_8h_aef6ecbc1dd335d8fa9ec8fe1c051057b}{current\+\_\+state}\hypertarget{configure_8h_aef6ecbc1dd335d8fa9ec8fe1c051057b}{}\label{configure_8h_aef6ecbc1dd335d8fa9ec8fe1c051057b}
+
+\begin{DoxyCompactList}\small\item\em Variável responsável por referenciar o estado atual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Este arquivo contém as funções, constantes e variáveis responsáveis por configurar e abstrair os Sensores da Micro\+Bit. 
+
+\begin{DoxyAuthor}{Autor}
+Bruno Georgevich Ferreira 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+27 May 2018 
+\end{DoxyDate}
+
+
+\subsection{Definições e macros}
+\index{configure.\+h@{configure.\+h}!D\+E\+B\+UG@{D\+E\+B\+UG}}
+\index{D\+E\+B\+UG@{D\+E\+B\+UG}!configure.\+h@{configure.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+B\+UG}{DEBUG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+B\+UG}\hypertarget{configure_8h_ad72dbcf6d0153db1b8d8a58001feed83}{}\label{configure_8h_ad72dbcf6d0153db1b8d8a58001feed83}
+Constante responsável por habilitar os printk\textquotesingle{}s do código \index{configure.\+h@{configure.\+h}!N\+O\+\_\+\+E\+R\+R\+O\+RS@{N\+O\+\_\+\+E\+R\+R\+O\+RS}}
+\index{N\+O\+\_\+\+E\+R\+R\+O\+RS@{N\+O\+\_\+\+E\+R\+R\+O\+RS}!configure.\+h@{configure.\+h}}
+\subsubsection[{\texorpdfstring{N\+O\+\_\+\+E\+R\+R\+O\+RS}{NO_ERRORS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+O\+\_\+\+E\+R\+R\+O\+RS~0}\hypertarget{configure_8h_a15218844bd3bc87e3ff485780c675998}{}\label{configure_8h_a15218844bd3bc87e3ff485780c675998}
+Constante responsável por agregar legibilidade ao retorno 0 da função Main \index{configure.\+h@{configure.\+h}!P\+R\+O\+G\+R\+A\+M\+\_\+\+R\+U\+N\+S\+\_\+\+C\+O\+R\+R\+E\+C\+T\+LY@{P\+R\+O\+G\+R\+A\+M\+\_\+\+R\+U\+N\+S\+\_\+\+C\+O\+R\+R\+E\+C\+T\+LY}}
+\index{P\+R\+O\+G\+R\+A\+M\+\_\+\+R\+U\+N\+S\+\_\+\+C\+O\+R\+R\+E\+C\+T\+LY@{P\+R\+O\+G\+R\+A\+M\+\_\+\+R\+U\+N\+S\+\_\+\+C\+O\+R\+R\+E\+C\+T\+LY}!configure.\+h@{configure.\+h}}
+\subsubsection[{\texorpdfstring{P\+R\+O\+G\+R\+A\+M\+\_\+\+R\+U\+N\+S\+\_\+\+C\+O\+R\+R\+E\+C\+T\+LY}{PROGRAM_RUNS_CORRECTLY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+O\+G\+R\+A\+M\+\_\+\+R\+U\+N\+S\+\_\+\+C\+O\+R\+R\+E\+C\+T\+LY~1}\hypertarget{configure_8h_a4665ddd28964cf2d8afbcdcdb8b147e8}{}\label{configure_8h_a4665ddd28964cf2d8afbcdcdb8b147e8}
+Constante responsável por agregar legibilidade ao loop de iterações da execução do estado atual 

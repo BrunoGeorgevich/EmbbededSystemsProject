@@ -1,0 +1,66 @@
+\hypertarget{i2c__utils_8h}{}\section{Referência do Arquivo i2c\+\_\+utils.\+h}
+\label{i2c__utils_8h}\index{i2c\+\_\+utils.\+h@{i2c\+\_\+utils.\+h}}
+
+
+Este arquivo contém as constantes, funções e variáveis relacionadas a Comunicação I²C.  
+
+
+{\ttfamily \#include $<$zephyr.\+h$>$}\\*
+{\ttfamily \#include $<$misc/printk.\+h$>$}\\*
+{\ttfamily \#include $<$board.\+h$>$}\\*
+{\ttfamily \#include $<$gpio.\+h$>$}\\*
+{\ttfamily \#include $<$device.\+h$>$}\\*
+{\ttfamily \#include $<$i2c.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$logging/sys\+\_\+log.\+h$>$}\\*
+Gráfico de dependência de inclusões para i2c\+\_\+utils.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{i2c__utils_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com este arquivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{i2c__utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Estruturas de Dados}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structi2c__dev}{i2c\+\_\+dev}
+\end{DoxyCompactItemize}
+\subsection*{Definições e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries S\+Y\+S\+\_\+\+L\+O\+G\+\_\+\+D\+O\+M\+A\+IN}~\char`\"{}P\+R\+O\+J\+E\+CT\char`\"{}\hypertarget{i2c__utils_8h_ac5b2cb2d6ae6b5526953a00f765a23e4}{}\label{i2c__utils_8h_ac5b2cb2d6ae6b5526953a00f765a23e4}
+
+\item 
+\#define {\bfseries I2\+C\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+TH}~10\hypertarget{i2c__utils_8h_a48e1e64a2a8c3e1e1df44760d2a73eaa}{}\label{i2c__utils_8h_a48e1e64a2a8c3e1e1df44760d2a73eaa}
+
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries i2c\+\_\+util\+\_\+dev\+\_\+init} (struct \hyperlink{structi2c__dev}{i2c\+\_\+dev} $\ast$\hyperlink{structi2c__dev}{i2c\+\_\+dev}, u16\+\_\+t addr, const char $\ast$name, u8\+\_\+t reg\+\_\+test, u8\+\_\+t reg\+\_\+test\+\_\+expected\+\_\+val)\hypertarget{i2c__utils_8h_a94dc84189a2c77ce509621dc4adb8150}{}\label{i2c__utils_8h_a94dc84189a2c77ce509621dc4adb8150}
+
+\item 
+int {\bfseries i2c\+\_\+util\+\_\+write\+\_\+bytes} (struct \hyperlink{structi2c__dev}{i2c\+\_\+dev} $\ast$\hyperlink{structi2c__dev}{i2c\+\_\+dev}, u8\+\_\+t reg, u8\+\_\+t $\ast$data, u32\+\_\+t num\+\_\+bytes)\hypertarget{i2c__utils_8h_a9bdf91cfea8b14d68bc7d8819e7ba742}{}\label{i2c__utils_8h_a9bdf91cfea8b14d68bc7d8819e7ba742}
+
+\item 
+int {\bfseries i2c\+\_\+util\+\_\+read\+\_\+bytes} (struct \hyperlink{structi2c__dev}{i2c\+\_\+dev} $\ast$\hyperlink{structi2c__dev}{i2c\+\_\+dev}, u8\+\_\+t reg, u8\+\_\+t $\ast$data, u32\+\_\+t num\+\_\+bytes)\hypertarget{i2c__utils_8h_a7510a339f80427d63e309fd8b6613ce7}{}\label{i2c__utils_8h_a7510a339f80427d63e309fd8b6613ce7}
+
+\item 
+int {\bfseries i2c\+\_\+util\+\_\+test\+\_\+connection} (struct \hyperlink{structi2c__dev}{i2c\+\_\+dev} $\ast$\hyperlink{structi2c__dev}{i2c\+\_\+dev})\hypertarget{i2c__utils_8h_a7879cbd3e3c4f64e2b36ef77aaf0ec85}{}\label{i2c__utils_8h_a7879cbd3e3c4f64e2b36ef77aaf0ec85}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Este arquivo contém as constantes, funções e variáveis relacionadas a Comunicação I²C. 
+
+\begin{DoxyAuthor}{Autor}
+Zephyr 
+\end{DoxyAuthor}

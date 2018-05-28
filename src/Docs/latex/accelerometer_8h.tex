@@ -1,0 +1,116 @@
+\hypertarget{accelerometer_8h}{}\section{Referência do Arquivo accelerometer.\+h}
+\label{accelerometer_8h}\index{accelerometer.\+h@{accelerometer.\+h}}
+
+
+Este arquivo contém as funções, constantes e variáveis relacionadas a funcionalidade do Acelerômetro.  
+
+
+{\ttfamily \#include \char`\"{}includes.\+h\char`\"{}}\\*
+Gráfico de dependência de inclusões para accelerometer.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{accelerometer_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com este arquivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{accelerometer_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Definições e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{accelerometer_8h_a58ef4e483804701597e8f9d4fa71bfba}{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+A\+D\+D\+R\+E\+SS}~0x1D
+\item 
+\#define \hyperlink{accelerometer_8h_a622bb7a97158370bf70d07a7522ab0bc}{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+ER}~0x0D
+\item 
+\#define \hyperlink{accelerometer_8h_a3846d9aa5bacabceb64cd0ba1e7c7d07}{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+T\+E\+ST}~0x5A
+\item 
+\#define \hyperlink{accelerometer_8h_adace40e77aaef2412bae491e9120ff29}{R\+E\+F\+R\+E\+S\+H\+\_\+\+T\+I\+M\+E\+\_\+\+A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+ER}~16
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{accelerometer_8h_a0796c8d57cbb60c0d2c2aa1558124ac5}{translate\+\_\+pos\+\_\+accelerometer} (int32\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Função que traduz os valores coletados pelo Acelerômetro para uma posição em uma Matriz 5x5. \end{DoxyCompactList}\item 
+void \hyperlink{accelerometer_8h_a7ac739d7e94d1b44dfde2fd32f049285}{accelerometer\+\_\+display} (int32\+\_\+t x, int32\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Função que irá representar a variação do Acelerômetro em uma Matriz 5x5. \end{DoxyCompactList}\item 
+void \hyperlink{accelerometer_8h_a70c79e23dab9678c5653ccedbb9c500e}{accelerometer\+\_\+showcase} ()\hypertarget{accelerometer_8h_a70c79e23dab9678c5653ccedbb9c500e}{}\label{accelerometer_8h_a70c79e23dab9678c5653ccedbb9c500e}
+
+\begin{DoxyCompactList}\small\item\em Função que irá executar a funcionalidade do Acelerômetro Implementada. \end{DoxyCompactList}\item 
+void \hyperlink{accelerometer_8h_aedd212ed9cb67e88387fee6a77e97187}{init\+\_\+accelerometer} ()\hypertarget{accelerometer_8h_aedd212ed9cb67e88387fee6a77e97187}{}\label{accelerometer_8h_aedd212ed9cb67e88387fee6a77e97187}
+
+\begin{DoxyCompactList}\small\item\em Função que irá iniciar as variáveis responsáveis pelo bom funcionamento do Acelerômetro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structi2c__dev}{i2c\+\_\+dev} \hyperlink{accelerometer_8h_ac62d82f0fd3bae2affcd081de51f4301}{accelerometer}\hypertarget{accelerometer_8h_ac62d82f0fd3bae2affcd081de51f4301}{}\label{accelerometer_8h_ac62d82f0fd3bae2affcd081de51f4301}
+
+\begin{DoxyCompactList}\small\item\em Variável responsável por estabelecer a comunicação I²C com o Acelerômetro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Este arquivo contém as funções, constantes e variáveis relacionadas a funcionalidade do Acelerômetro. 
+
+\begin{DoxyAuthor}{Autor}
+Bruno Georgevich Ferreira 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+27 May 2018 
+\end{DoxyDate}
+
+
+\subsection{Definições e macros}
+\index{accelerometer.\+h@{accelerometer.\+h}!A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+A\+D\+D\+R\+E\+SS@{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+A\+D\+D\+R\+E\+SS}}
+\index{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+A\+D\+D\+R\+E\+SS@{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+A\+D\+D\+R\+E\+SS}!accelerometer.\+h@{accelerometer.\+h}}
+\subsubsection[{\texorpdfstring{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+A\+D\+D\+R\+E\+SS}{ACCELEROMETER_ADDRESS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+A\+D\+D\+R\+E\+SS~0x1D}\hypertarget{accelerometer_8h_a58ef4e483804701597e8f9d4fa71bfba}{}\label{accelerometer_8h_a58ef4e483804701597e8f9d4fa71bfba}
+Endereço do Acelerômetro \index{accelerometer.\+h@{accelerometer.\+h}!A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+ER}}
+\index{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+ER}!accelerometer.\+h@{accelerometer.\+h}}
+\subsubsection[{\texorpdfstring{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+ER}{ACCELEROMETER_REGISTER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+ER~0x0D}\hypertarget{accelerometer_8h_a622bb7a97158370bf70d07a7522ab0bc}{}\label{accelerometer_8h_a622bb7a97158370bf70d07a7522ab0bc}
+Registrador do Acelerômetro \index{accelerometer.\+h@{accelerometer.\+h}!A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+T\+E\+ST@{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+T\+E\+ST}}
+\index{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+T\+E\+ST@{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+T\+E\+ST}!accelerometer.\+h@{accelerometer.\+h}}
+\subsubsection[{\texorpdfstring{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+T\+E\+ST}{ACCELEROMETER_TEST}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+T\+E\+ST~0x5A}\hypertarget{accelerometer_8h_a3846d9aa5bacabceb64cd0ba1e7c7d07}{}\label{accelerometer_8h_a3846d9aa5bacabceb64cd0ba1e7c7d07}
+Código de Teste do Acelerômetro \index{accelerometer.\+h@{accelerometer.\+h}!R\+E\+F\+R\+E\+S\+H\+\_\+\+T\+I\+M\+E\+\_\+\+A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+ER@{R\+E\+F\+R\+E\+S\+H\+\_\+\+T\+I\+M\+E\+\_\+\+A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+ER}}
+\index{R\+E\+F\+R\+E\+S\+H\+\_\+\+T\+I\+M\+E\+\_\+\+A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+ER@{R\+E\+F\+R\+E\+S\+H\+\_\+\+T\+I\+M\+E\+\_\+\+A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+ER}!accelerometer.\+h@{accelerometer.\+h}}
+\subsubsection[{\texorpdfstring{R\+E\+F\+R\+E\+S\+H\+\_\+\+T\+I\+M\+E\+\_\+\+A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+ER}{REFRESH_TIME_ACCELEROMETER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+F\+R\+E\+S\+H\+\_\+\+T\+I\+M\+E\+\_\+\+A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+ER~16}\hypertarget{accelerometer_8h_adace40e77aaef2412bae491e9120ff29}{}\label{accelerometer_8h_adace40e77aaef2412bae491e9120ff29}
+Tempo de Reiterção do Acelerômetro 
+
+\subsection{Funções}
+\index{accelerometer.\+h@{accelerometer.\+h}!accelerometer\+\_\+display@{accelerometer\+\_\+display}}
+\index{accelerometer\+\_\+display@{accelerometer\+\_\+display}!accelerometer.\+h@{accelerometer.\+h}}
+\subsubsection[{\texorpdfstring{accelerometer\+\_\+display(int32\+\_\+t x, int32\+\_\+t y)}{accelerometer_display(int32_t x, int32_t y)}}]{\setlength{\rightskip}{0pt plus 5cm}void accelerometer\+\_\+display (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{x, }
+\item[{int32\+\_\+t}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{accelerometer_8h_a7ac739d7e94d1b44dfde2fd32f049285}{}\label{accelerometer_8h_a7ac739d7e94d1b44dfde2fd32f049285}
+
+
+Função que irá representar a variação do Acelerômetro em uma Matriz 5x5. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em int} & x -\/ Coordenada X coletada do Acelerômetro \\
+\hline
+{\em int} & x -\/ Coordenada Y coletada do Acelerômetro \\
+\hline
+\end{DoxyParams}
+\index{accelerometer.\+h@{accelerometer.\+h}!translate\+\_\+pos\+\_\+accelerometer@{translate\+\_\+pos\+\_\+accelerometer}}
+\index{translate\+\_\+pos\+\_\+accelerometer@{translate\+\_\+pos\+\_\+accelerometer}!accelerometer.\+h@{accelerometer.\+h}}
+\subsubsection[{\texorpdfstring{translate\+\_\+pos\+\_\+accelerometer(int32\+\_\+t val)}{translate_pos_accelerometer(int32_t val)}}]{\setlength{\rightskip}{0pt plus 5cm}int translate\+\_\+pos\+\_\+accelerometer (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{accelerometer_8h_a0796c8d57cbb60c0d2c2aa1558124ac5}{}\label{accelerometer_8h_a0796c8d57cbb60c0d2c2aa1558124ac5}
+
+
+Função que traduz os valores coletados pelo Acelerômetro para uma posição em uma Matriz 5x5. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em int} & val -\/ Valor que será mapeado de 0 a 4 \\
+\hline
+\end{DoxyParams}

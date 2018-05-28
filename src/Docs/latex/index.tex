@@ -1,0 +1,49 @@
+\hypertarget{index_intro_sec}{}\section{Descrição}\label{index_intro_sec}
+Este projeto foi delegado aos estudantes da turma de Sistemas Embarcados, no período de 2017.\+2, pelo professor da Universidade Federal de Alagoas (U\+Fal) Rodrigo Peixoto. O estudo realizado aqui tem como principal proposta exercitar os conhecimentos aprendidos em sala de aula, referentes aos conceitos e técnicas no que tange o desenvolvimento de e para sistemas embarcados. Desta forma, foi proposto o desenvolvimento de cinco casos de teste, que contemplassem os conceitos aprendidos, anteriormente mencionados, e as funcionalidades presentes na placa utilizada, a Micro\+Bit. Os cinco casos de teste consistiam em\+:
+\begin{DoxyItemize}
+\item Caso 01\+: Mostrar o texto \char`\"{}\+E\+C\+O\+M042.\+2017.\+2\char`\"{} no display de forma que ele fique passando no display.
+\item Caso 02\+: Deve utilizar o acelerômetro para movimentar um ponto (apenas um led da matriz) que dependendo da posição da placa ele vai se mover;
+\item Caso 03\+: Deve utilizar a bússola para mostrar onde está o norte magnético. Essa indicação deve ser feita na matriz de leds;
+\item Caso 04\+: Mostrar a temperatura capturada pelo sensor da placa em graus célsius;
+\item Caso 05\+: Deve utilizar o bluetooth para interagir com um aparelho externo (ex. celular ou computador) deve trocar dados nessa interação. Fica a critério do aluno definir como mostrar que a troca de dados ocorre de forma correta. Dica, pode mostrar na matriz de led o valor passado pelo outro computador.
+\end{DoxyItemize}
+
+Onde somente quatro se fizeram possíveis de serem implementados.\hypertarget{index_install_sec}{}\section{Execução do Projeto}\label{index_install_sec}
+Para execução do projeto desenvolvido para este projeto, deve-\/se baixá-\/lo do repositório online e instalar algumas depedências\+: 
+\begin{DoxyCode}
+1 sudo apt-get install putty
+2 git clone https://github.com/BrunoGeorgevich/EmbbededSystemsProject
+\end{DoxyCode}
+
+
+Logo em seguida, deve-\/se entrar no diretório baixado, através do comando\+: 
+\begin{DoxyCode}
+1 cd EmbbededSystemsProject
+\end{DoxyCode}
+
+
+Para que então se possa compilar e gerar o binário referente a Micro\+Bit\+: 
+\begin{DoxyCode}
+1 cd build
+2 cmake ..
+3 make -j7
+\end{DoxyCode}
+
+
+Caso todo o processo de compilação e geração tenha dado certo, agora basta copiar o binário gerado e copiá-\/lo para a Micro\+Bit\+: 
+\begin{DoxyCode}
+1 cp zephyr/zephyr.bin [CAMINHO PARA A SUA MICROBIT]
+\end{DoxyCode}
+
+
+Tendo copiado o binário para a Micro\+Bit a mesma irá reiniciar e desconectar do computador. Logo após ela automaticamente reconectar, execute a linha de comando abaixo para comunicar-\/se com ela via serial\+: 
+\begin{DoxyCode}
+1 sudo putty /dev/ttyACM0 -serial -sercfg 115200,8,n,1,N
+\end{DoxyCode}
+
+
+Para gerar a documentação para o mesmo, deve-\/se executar as seguites linhas de código\+: 
+\begin{DoxyCode}
+1 cd ../src/ && doxygen dox\_config
+\end{DoxyCode}
+ 

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Projeto Final de Embarcados: Código-Fonte de state.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projeto Final de Embarcados
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Este projeto foi realizado para a Disciplina de Sistemas Embarcados, ministrada pelo professor Rodrigo Peixoto.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Estruturas&#160;de&#160;Dados</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">state.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="state_8h.html">Vá para a documentação deste arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/****************************************************************************</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2018 by Bruno Georgevich Ferreira                          *</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Github : https://github.com/brunogeorgevich/                             *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> ***************************************************************************/</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef STATE_H</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define STATE_H</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248">   18</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248">state_t</a>{</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248a11d8681f1579abb9130b1d4d8cc13a44">   19</a></span>&#160;    <a class="code" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248a11d8681f1579abb9130b1d4d8cc13a44">HELLOWORLD</a>,     </div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248ac4ae6787ff1d8b2d1cf0ae9aa696e56c">   20</a></span>&#160;    <a class="code" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248ac4ae6787ff1d8b2d1cf0ae9aa696e56c">TEMPERATURE</a>,    </div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248ae2861f6a10788d276d24806767e6a378">   21</a></span>&#160;    <a class="code" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248ae2861f6a10788d276d24806767e6a378">ACCELETOMETER</a>,  </div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248a7bcb838d6da81cce9b69c4ebfd47bbd6">   22</a></span>&#160;    <a class="code" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248a7bcb838d6da81cce9b69c4ebfd47bbd6">MAGNETOMETER</a>   </div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structstate.html">   28</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structstate.html">state</a> {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">union </span>{</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">struct </span>internal_states{ </div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structstate.html#a276d20af15eb7cc14800557d670eb8a5">   31</a></span>&#160;            <span class="keyword">enum</span> <a class="code" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248">state_t</a> <a class="code" href="structstate.html#a276d20af15eb7cc14800557d670eb8a5">previous</a>; </div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structstate.html#aa23ac3f3183e79172bab91684e0195e1">   32</a></span>&#160;            <span class="keyword">enum</span> <a class="code" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248">state_t</a> <a class="code" href="structstate.html#aa23ac3f3183e79172bab91684e0195e1">current</a>;  </div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structstate.html#a24e4d9ff5dc7891e048ee578ba970837">   33</a></span>&#160;            <span class="keyword">enum</span> <a class="code" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248">state_t</a> <a class="code" href="structstate.html#a24e4d9ff5dc7891e048ee578ba970837">next</a>;     </div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        };</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structstate.html#a8a9de0cd847e8ae900e15eb66fe408f2">   35</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248">state_t</a> <a class="code" href="structstate.html#a8a9de0cd847e8ae900e15eb66fe408f2">s</a>[3]; </div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    };</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structstate.html#a90aac7b165377e812886e60e28d054bf">   38</a></span>&#160;    void (*<a class="code" href="structstate.html#a90aac7b165377e812886e60e28d054bf">run</a>)(void); </div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif //STATE_H</span></div><div class="ttc" id="structstate_html_aa23ac3f3183e79172bab91684e0195e1"><div class="ttname"><a href="structstate.html#aa23ac3f3183e79172bab91684e0195e1">state::current</a></div><div class="ttdeci">enum state_t current</div><div class="ttdef"><b>Definition:</b> state.h:32</div></div>
+<div class="ttc" id="state_8h_html_aa0aafed44fec19806d8f9ad834be1248a7bcb838d6da81cce9b69c4ebfd47bbd6"><div class="ttname"><a href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248a7bcb838d6da81cce9b69c4ebfd47bbd6">MAGNETOMETER</a></div><div class="ttdef"><b>Definition:</b> state.h:22</div></div>
+<div class="ttc" id="state_8h_html_aa0aafed44fec19806d8f9ad834be1248"><div class="ttname"><a href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248">state_t</a></div><div class="ttdeci">state_t</div><div class="ttdoc">Enum responsável por definir os estados da Máquina de Estados. </div><div class="ttdef"><b>Definition:</b> state.h:18</div></div>
+<div class="ttc" id="state_8h_html_aa0aafed44fec19806d8f9ad834be1248a11d8681f1579abb9130b1d4d8cc13a44"><div class="ttname"><a href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248a11d8681f1579abb9130b1d4d8cc13a44">HELLOWORLD</a></div><div class="ttdef"><b>Definition:</b> state.h:19</div></div>
+<div class="ttc" id="structstate_html_a24e4d9ff5dc7891e048ee578ba970837"><div class="ttname"><a href="structstate.html#a24e4d9ff5dc7891e048ee578ba970837">state::next</a></div><div class="ttdeci">enum state_t next</div><div class="ttdef"><b>Definition:</b> state.h:33</div></div>
+<div class="ttc" id="structstate_html_a276d20af15eb7cc14800557d670eb8a5"><div class="ttname"><a href="structstate.html#a276d20af15eb7cc14800557d670eb8a5">state::previous</a></div><div class="ttdeci">enum state_t previous</div><div class="ttdef"><b>Definition:</b> state.h:31</div></div>
+<div class="ttc" id="state_8h_html_aa0aafed44fec19806d8f9ad834be1248ae2861f6a10788d276d24806767e6a378"><div class="ttname"><a href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248ae2861f6a10788d276d24806767e6a378">ACCELETOMETER</a></div><div class="ttdef"><b>Definition:</b> state.h:21</div></div>
+<div class="ttc" id="structstate_html_a90aac7b165377e812886e60e28d054bf"><div class="ttname"><a href="structstate.html#a90aac7b165377e812886e60e28d054bf">state::run</a></div><div class="ttdeci">void(* run)(void)</div><div class="ttdef"><b>Definition:</b> state.h:38</div></div>
+<div class="ttc" id="state_8h_html_aa0aafed44fec19806d8f9ad834be1248ac4ae6787ff1d8b2d1cf0ae9aa696e56c"><div class="ttname"><a href="state_8h.html#aa0aafed44fec19806d8f9ad834be1248ac4ae6787ff1d8b2d1cf0ae9aa696e56c">TEMPERATURE</a></div><div class="ttdef"><b>Definition:</b> state.h:20</div></div>
+<div class="ttc" id="structstate_html_a8a9de0cd847e8ae900e15eb66fe408f2"><div class="ttname"><a href="structstate.html#a8a9de0cd847e8ae900e15eb66fe408f2">state::s</a></div><div class="ttdeci">enum state_t s[3]</div><div class="ttdef"><b>Definition:</b> state.h:35</div></div>
+<div class="ttc" id="structstate_html"><div class="ttname"><a href="structstate.html">state</a></div><div class="ttdoc">Struct que modela o formato de um estado da Máquina de Estados. </div><div class="ttdef"><b>Definition:</b> state.h:28</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>
